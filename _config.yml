@@ -1,0 +1,7 @@
+# Site settings
+title: We Long To Belong*
+description: a quarterly zine. a quarterly concert.
+url: ""
+
+# Build settings
+markdown: kramdown
