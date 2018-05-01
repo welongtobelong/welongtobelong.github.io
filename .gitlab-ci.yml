@@ -27,7 +27,7 @@ pages:
   only:
   - master
 
-gh-pages:
+deploy:gh-pages:
   stage: deploy
   dependencies: pages
   script:
