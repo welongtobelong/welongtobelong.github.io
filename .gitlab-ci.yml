@@ -27,9 +27,10 @@ pages:
   only:
   - master
 
-deploy:gh-pages:
+deploy:ghpages:
   stage: deploy
-  dependencies: pages
+  dependencies:
+  - pages
   script:
   - git checkout gh-pages
   - git add public
