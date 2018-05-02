@@ -48,6 +48,7 @@ ghpages:
   - git add public
   - git commit -m 'Gitlab CI commit from master $CI_COMMIT_REF_NAME'
   - git remote add ghpages git@gitlab.com:welongtobelong/welongtobelong.gitlab.io.git
+  - ssh-keyscan -t rsa gitlab.com >> ~/.ssh/known_hosts
   - git push ghpages gh-pages
   only:
   - master
