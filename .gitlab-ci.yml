@@ -44,6 +44,7 @@ ghpages:
   - git config --global user.name "$GIT_USER_NAME"
   - mkdir -p ~/.ssh
   - echo "$GIT_SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+  - chmod 0600 ~/.ssh/id_rsa
   - git checkout gh-pages
   - git add public
   - git commit -m 'Gitlab CI commit from master $CI_COMMIT_REF_NAME'
