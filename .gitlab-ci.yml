@@ -40,6 +40,9 @@ ghpages:
   dependencies:
   - build
   script:
+  - git config --global user.email "$GIT_USER_EMAIL"
+  - git config --global user.name "$GIT_USER_NAME"
+  - echo "$GIT_SSH_PRIVATE_KEY" > .ssh/id_rsa
   - git checkout gh-pages
   - git add public
   - git commit
