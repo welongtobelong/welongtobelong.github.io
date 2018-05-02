@@ -26,14 +26,14 @@ build:
   only:
   - master
 
-pages:
-  stage: deploy
-  dependencies:
-  - build
-  script:
-  - echo "Deploying pages"
-  only:
-  - master
+# pages:
+#   stage: deploy
+#   dependencies:
+#   - build
+#   script:
+#   - echo "Deploying pages"
+#   only:
+#   - master
 
 ghpages:
   stage: deploy
@@ -46,7 +46,7 @@ ghpages:
   - echo "$GIT_SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
   - git checkout gh-pages
   - git add public
-  - git commit
+  - git commit -m 'Gitlab CI commit from master $CI_COMMIT_REF_NAME'
   - git push
   only:
   - master
