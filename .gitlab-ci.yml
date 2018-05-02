@@ -42,10 +42,25 @@ ghpages:
   script:
   - git config --global user.email "$GIT_USER_EMAIL"
   - git config --global user.name "$GIT_USER_NAME"
-  - echo "$GIT_SSH_PRIVATE_KEY" > .ssh/id_rsa
+  - mkdir -p ~/.ssh
+  - echo "$GIT_SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
   - git checkout gh-pages
   - git add public
   - git commit
   - git push
   only:
   - master
+
+"Solutions lads . I find it irritating when someone makes a suggestion and someone else tries to contradict with no solution or there own"
+
+Are you proposing that a lack of solutions is no excuse for proposing legislation that provably won't work or will make things worse? I find it irritating that you avoided responding to the actual points I made.
+
+That said, while it's clear from the above commenters that finding appropriate solutions is a complicated, multifaceted, hard problem, it's not hard to distinguish initiatives like this that definitely disimprove from those that can at least bring about modest improvements:
+
+1. Acknowledge that a LOT of issues with child safety are nothing to do with child safety. They're do to with safety of persons, and while they mostly affect the most vulnerable in society, including children, this also affects other vulnerable groups.
+
+2. Introduce greater direct accountability for online services. Things like GDPR, while somewhat separate, are a great step in the right direction in terms of enabling user control of/opt-ins/opt-outs of manipulative targetting. It even makes a lot of targetting basically impossible to do legally. Children might not be expected to have the full knowledge and understanding of data control and consent here, but providing the tools through this kind of regulation still improves the situation somewhat and provides parents with aids to get a better handle over engagement with the online world.
+
+3. Education. This applies equally to adults. Not just digital literacy education, but general education around consent and safety.
+
+4. Introduce more/new/better incentives for the creation of open platforms that encourage proper controls and innovative solutions to individual online safety issues. It's been shown that online-advertising business-models are in diametric opposition to this principle. There are many open alternatives to ad-centred platforms that are underused largely as a result of underdevelopment, lack of funding support, etc. Improved advertising regulation, particularly around targetting, could help decrease these gaps.
