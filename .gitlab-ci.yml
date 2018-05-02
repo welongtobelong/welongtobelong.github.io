@@ -3,36 +3,46 @@ image: ruby:2.3
 variables:
   JEKYLL_ENV: production
 
-before_script:
-  - bundle install
-
 test:
   stage: test
   script:
+  - bundle install
   - bundle exec jekyll build -d test
   artifacts:
     paths:
     - test
   except:
   - master
+  - gh-pages
 
-pages:
-  stage: deploy
+build:
+  stage: build
   script:
+  - bundle install
   - bundle exec jekyll build -d public
   artifacts:
-    when: on_success
     paths:
     - public
   only:
   - master
 
-deploy:ghpages:
+pages:
   stage: deploy
   dependencies:
-  - pages
+  - build
+  script:
+  - echo "Deploying pages"
+  only:
+  - master
+
+ghpages:
+  stage: deploy
+  dependencies:
+  - build
   script:
   - git checkout gh-pages
   - git add public
   - git commit
   - git push
+  only:
+  - master
