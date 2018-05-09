@@ -15,8 +15,8 @@ test:
   - master
   - gh-pages
 
-build:
-  stage: build
+pages:
+  stage: deploy
   script:
   - bundle install
   - bundle exec jekyll build -d public
@@ -26,30 +26,32 @@ build:
   only:
   - master
 
-# pages:
+# build:
+#   stage: build
+#   script:
+#   - bundle install
+#   - bundle exec jekyll build -d public
+#   artifacts:
+#     paths:
+#     - public
+#   only:
+#   - master
+
+# ghpages:
 #   stage: deploy
 #   dependencies:
 #   - build
 #   script:
-#   - echo "Deploying pages"
+#   - git config --global user.email "$GIT_USER_EMAIL"
+#   - git config --global user.name "$GIT_USER_NAME"
+#   - mkdir -p ~/.ssh
+#   - echo "$GIT_SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+#   - chmod 0600 ~/.ssh/id_rsa
+#   - git checkout gh-pages
+#   - git add public
+#   - git commit -m 'Gitlab CI commit from master $CI_COMMIT_REF_NAME'
+#   - git remote add ghpages git@gitlab.com:welongtobelong/welongtobelong.gitlab.io.git
+#   - ssh-keyscan -t rsa gitlab.com >> ~/.ssh/known_hosts
+#   - git push ghpages gh-pages
 #   only:
 #   - master
-
-ghpages:
-  stage: deploy
-  dependencies:
-  - build
-  script:
-  - git config --global user.email "$GIT_USER_EMAIL"
-  - git config --global user.name "$GIT_USER_NAME"
-  - mkdir -p ~/.ssh
-  - echo "$GIT_SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-  - chmod 0600 ~/.ssh/id_rsa
-  - git checkout gh-pages
-  - git add public
-  - git commit -m 'Gitlab CI commit from master $CI_COMMIT_REF_NAME'
-  - git remote add ghpages git@gitlab.com:welongtobelong/welongtobelong.gitlab.io.git
-  - ssh-keyscan -t rsa gitlab.com >> ~/.ssh/known_hosts
-  - git push ghpages gh-pages
-  only:
-  - master
