@@ -2,9 +2,9 @@
 layout: default
 ---
 
-<div class="block centre">
+<div class="block centre site-title-word">
     <div class="block-content">
-        <span class="site-title-word">This</span>
+        <span>This</span>
     </div>
 </div>
 <div class="block centre tight">
@@ -12,14 +12,14 @@ layout: default
         <p>A quarterly zine. A quarterly concert.</p>
     </div>
 </div>
-<div class="block centre-right">
+<div class="block centre-right site-title-word">
     <div class="block-content">
-        <span class="site-title-word">is</span>
+        <span>is</span>
     </div>
 </div>
 <div class="block centre">
     <div class="block-content">
-        <p>Not fitting in. A maladay that has affected
+        <p>Not fitting in. A malady that has affected
             mankind since 2012, and probably before
             that too.</p>
         <p>This Is Not Where I Belong* simultaneously
@@ -29,24 +29,24 @@ layout: default
             a live concert.</p>
     </div>
 </div>
-<div class="block top-right">
+<div class="block top-right site-title-word">
     <div class="block-content">
-        <span class="site-title-word">not</span>
+        <span>not</span>
     </div>
 </div>
-<div class="block bottom-left">
+<div class="block bottom-left site-title-word">
     <div class="block-content">
-        <span class="site-title-word">where</span>
+        <span>where</span>
     </div>
 </div>
-<div class="block centre-left">
+<div class="block centre-left site-title-word">
     <div class="block-content">
-        <span class="site-title-word">I</span>
+        <span>I</span>
     </div>
 </div>
-<div class="block centre">
+<div class="block centre site-title-word">
     <div class="block-content">
-        <span class="site-title-word">Belong*</span>
+        <span>Belong*</span>
     </div>
 </div>
 <div class="block centre">
@@ -54,3 +54,20 @@ layout: default
         <p>Call for  Submissions</p>
     </div>
 </div>
+
+{% assign reverseposts = site.posts | reverse %}
+{% for post in reverseposts %}
+
+    <div class="block centre blank"></div>
+    {% assign mod = forloop.index | modulo: 3 %}
+    {% if mod == 0 %}
+        <div class="block centre blank"></div>
+        <div class="block centre blank"></div>
+        <div class="block centre blank"></div>
+    {% endif %}
+    <div class="block centre issue">
+        <div class="block-content">
+            <span>#{{ forloop.rindex }}</span>
+        </div>
+    </div>
+{% endfor %}

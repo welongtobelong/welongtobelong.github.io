@@ -15,6 +15,7 @@
      align-items: center;
      align-content: center;
      font-family: sans-serif;
+     background: #ddd;
  }
 
 .main-site-header {
@@ -38,11 +39,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background: #fff;
 }
 .main-content > .block .block-content {
     padding: 20px;
 }
-.main-content > .block .site-title-word {
+.main-content > .block.site-title-word span,
+.main-content > .block.issue span {
     font-size: 3em;
     text-transform: capitalize;
+}
+.main-content > .block.site-title-word,
+.main-content > .block.blank {
+    background: transparent;
+}
+.main-content > .block.issue {
+    background: rgba(255, 255, 255, 1);
+}
+.main-content > .block.site-title-word span {
+    position: fixed;
+    z-index: -1;
 }
