@@ -14,8 +14,9 @@
      justify-content: center;
      align-items: center;
      align-content: center;
-     font-family: sans-serif;
-     background: #ddd;
+     font-family: 'Lato', sans-serif;
+     background: #eee url(img/debug-bg.png) center no-repeat;
+     background-size: auto 100%;
  }
 
 .main-site-header {
@@ -25,38 +26,58 @@
 .main-content {
     display: flex;
     flex-wrap: wrap;
-    width: 64vh;
+    width: 46vh;
+    justify-content: center;
 }
-@media screen and (min-width: 120vh) { .main-content { width: 124vh; } }
-@media screen and (min-width: 180vh) { .main-content { width: 184vh; } }
-@media screen and (min-width: 240vh) { .main-content { width: 244vh; } }
-@media screen and (min-width: 300vh) { .main-content { width: 304vh; } }
-@media screen and (min-width: 360vh) { .main-content { width: 364vh; } }
+@media screen and (min-width: 90vh) { .main-content { width: 92vh; } }
+@media screen and (min-width: 136vh) { .main-content { width: 138vh; } }
+@media screen and (min-width: 182vh) { .main-content { width: 184vh; width: 138vh; } }
+@media screen and (min-width: 232vh) { .main-content { width: 230vh; } }
+@media screen and (min-width: 274vh) { .main-content { width: 276vh; } }
+
 .main-content > .block {
     height: 33vh;
-    width: 60vh;
+    width: 46vh;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #fff;
+    /* background: rgba(255, 255, 255, 1); */
 }
 .main-content > .block .block-content {
     padding: 20px;
 }
 .main-content > .block.site-title-word span,
 .main-content > .block.issue span {
-    font-size: 3em;
+    font-size: 4.4em;
     text-transform: capitalize;
+    color: rgba(20, 140, 20, 1);
+    font-weight: 900;
 }
 .main-content > .block.site-title-word,
 .main-content > .block.blank {
     background: transparent;
 }
 .main-content > .block.issue {
-    background: rgba(255, 255, 255, 1);
+    /* background: rgba(255, 255, 255, 1); */
 }
-.main-content > .block.site-title-word span {
+.main-content > .block.site-title-word .block-content {
     position: fixed;
     z-index: -1;
+    width: calc(46vh - 40px);
+}
+
+/**
+ * Specific block styles
+ */
+.main-content > .block.site-title-word.centre .block-content {
+    text-align: center;
+}
+.main-content > .block.site-title-word.centre-right .block-content,
+.main-content > .block.site-title-word.right .block-content {
+    text-align: right;
+}
+
+.main-content > .block.site-title-word.left .block-content {
+    text-align: left;
 }
