@@ -21,7 +21,7 @@
         {% endif %}
         <div class="block centre issue">
             <div class="block-content">
-                <span><a href="{{ post.url }}">#{{ forloop.rindex }}</a></span>
+                <span><a href="{{ post.url | fix_permalink }}">#{{ forloop.rindex }}</a></span>
             </div>
         </div>
     {% endfor %}
