@@ -1,73 +1,34 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+{% include head.html %}
+</head>
+<body class="homepage">
 
-<div class="block centre site-title-word">
-    <div class="block-content">
-        <span>This</span>
-    </div>
-</div>
-<div class="block centre tight">
-    <div class="block-content">
-        <p>A quarterly zine. A quarterly concert.</p>
-    </div>
-</div>
-<div class="block centre-right site-title-word">
-    <div class="block-content">
-        <span>is</span>
-    </div>
-</div>
-<div class="block centre">
-    <div class="block-content">
-        <p>Not fitting in. A malady that has affected
-            mankind since 2012, and probably before
-            that too.</p>
-        <p>This Is Not Where I Belong* simultaneously
-            staves off and encourages this affliction. We
-            realise a printed zine every 3 months, and
-            celebrate the arrival of each new edition with
-            a live concert.</p>
-    </div>
-</div>
-<div class="block top-right site-title-word">
-    <div class="block-content">
-        <span>not</span>
-    </div>
-</div>
-<div class="block bottom-left site-title-word">
-    <div class="block-content">
-        <span>where</span>
-    </div>
-</div>
-<div class="block centre-left site-title-word">
-    <div class="block-content">
-        <span>I</span>
-    </div>
-</div>
-<div class="block centre site-title-word">
-    <div class="block-content">
-        <span>Belong*</span>
-    </div>
-</div>
-<div class="block centre">
-    <div class="block-content">
-        <p>Call for  Submissions</p>
-    </div>
-</div>
+{% include header.html %}
 
-{% assign reverseposts = site.posts | reverse %}
-{% for post in reverseposts %}
+<main class="main-content">
+    {% include homepage-header.html %}
+    {% assign reverseposts = site.posts | reverse %}
+    {% for post in reverseposts %}
 
-    <div class="block centre blank"></div>
-    {% assign mod = forloop.index | modulo: 3 %}
-    {% if mod == 0 %}
         <div class="block centre blank"></div>
-        <div class="block centre blank"></div>
-        <div class="block centre blank"></div>
-    {% endif %}
-    <div class="block centre issue">
-        <div class="block-content">
-            <span>#{{ forloop.rindex }}</span>
+        {% assign mod = forloop.index | modulo: 3 %}
+        {% if mod == 0 %}
+            <div class="block centre blank"></div>
+            <div class="block centre blank"></div>
+            <div class="block centre blank"></div>
+        {% endif %}
+        <div class="block centre issue">
+            <div class="block-content">
+                <span><a href="{{ post.url }}">#{{ forloop.rindex }}</a></span>
+            </div>
         </div>
-    </div>
-{% endfor %}
+    {% endfor %}
+</main>
+
+{% include footer.html %}
+</body>
+</html>
+
+

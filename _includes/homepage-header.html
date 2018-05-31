@@ -1,0 +1,47 @@
+{% assign title_words = page.title | split: ' ' %}
+
+<div class="block centre site-title-word">
+    <div class="block-content">
+        <span>{{ title_words[0] }}</span>
+    </div>
+</div>
+<div class="block centre tight">
+    <div class="block-content">
+        <p>{{ page.subtitle }}</p>
+    </div>
+</div>
+<div class="block centre-right site-title-word">
+    <div class="block-content">
+        <span>{{ title_words[1] }}</span>
+    </div>
+</div>
+<div class="block centre">
+    <div class="block-content">
+        {{ content }}
+    </div>
+</div>
+<div class="block top-right site-title-word">
+    <div class="block-content">
+        <span>{{ title_words[2] }}</span>
+    </div>
+</div>
+<div class="block bottom-left site-title-word">
+    <div class="block-content">
+        <span>{{ title_words[3] }}</span>
+    </div>
+</div>
+<div class="block centre-left site-title-word">
+    <div class="block-content">
+        <span>{{ title_words[4] }}</span>
+    </div>
+</div>
+<div class="block centre site-title-word">
+    <div class="block-content">
+        <span>{{ title_words[5] }}</span>
+    </div>
+</div>
+<div class="block centre">
+    <div class="block-content">
+        <p><a href="/call">Call for  Submissions</a></p>
+    </div>
+</div>

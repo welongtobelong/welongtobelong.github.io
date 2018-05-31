@@ -5,3 +5,10 @@ url: ""
 
 # Build settings
 markdown: kramdown
+permalink: /issue/:title
+defaults:
+  - scope:
+      path: ''
+      type: posts
+    values:
+      layout: 'post'
