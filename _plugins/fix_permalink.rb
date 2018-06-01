@@ -4,10 +4,15 @@
 # See:
 #  - https://github.com/jekyll/jekyll/issues/4440
 #  - https://github.com/jekyll/jekyll/issues/6709
-module TextFilter
-    def fix_permalink(url)
-        url.sub(/([^\/])$/, '\1/')
-    end
+Jekyll::Hooks.register :posts, :pre_render do |post|
+    # code to call before Jekyll renders a post
+    post.data['permalink'] = post.data['permalink'].sub(/([^\/])$/, '\1/')
 end
-
-Liquid::Template.register_filter(TextFilter)
+Jekyll::Hooks.register :documents, :pre_render do |doc|
+    # code to call before Jekyll renders a post
+    doc.data['permalink'] = doc.data['permalink'].sub(/([^\/])$/, '\1/')
+end
+Jekyll::Hooks.register :pages, :pre_render do |page|
+    # code to call before Jekyll renders a post
+    page.data['permalink'] = page.data['permalink'].sub(/([^\/])$/, '\1/')
+end
