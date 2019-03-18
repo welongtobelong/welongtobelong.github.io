@@ -21,7 +21,6 @@ collections:
         name: "permalink",
         widget: "string",
         pattern: ["/^\/[a-zA-Z0-9-\/]*$/", "The path part of the page URL"],
-        required: false,
-        default:  "/issue/{{year}}-{{month}}-{{day}}-{{slug}}"
+        required: false
       }
 
